@@ -9,7 +9,7 @@ services:
       - NODE_ENV=production
     restart: unless-stopped
     container_name: tobi-trivia-app
-    platform: linux/amd64  # Will auto-detect and use appropriate architecture
+    # Remove platform specification to allow auto-detection
 
   # Alternative: Build locally if needed
   trivia-app-local:

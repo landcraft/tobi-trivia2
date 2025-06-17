@@ -39,6 +39,19 @@ docker build -t tobi-trivia .
 docker buildx build --platform linux/amd64,linux/arm64 -t tobi-trivia .
 ```
 
+## Fixing Platform Issues
+
+If you encounter platform mismatch errors:
+
+```bash
+# Force pull the correct architecture
+docker pull --platform linux/arm64 ghcr.io/yourusername/tobi-trivia:latest
+
+# Or build locally for your platform
+docker build -t tobi-trivia .
+docker run -p 3000:80 tobi-trivia
+```
+
 ## Multi-Architecture Support
 
 The Docker images are built for multiple CPU architectures:

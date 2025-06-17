@@ -1,5 +1,5 @@
 # Use Node.js 18 alpine as base image
-FROM node:18-alpine as builder
+FROM --platform=$BUILDPLATFORM node:18-alpine as builder
 
 # Set working directory
 WORKDIR /app
@@ -16,7 +16,7 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Production stage
+# Production stage - use multi-arch base image
 FROM nginx:alpine
 
 # Copy built assets from builder stage
