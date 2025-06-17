@@ -4,30 +4,48 @@ This guide explains how to build and run the Tobi's Daily Trivia app using Docke
 
 ## Quick Start
 
-### Using Docker Compose (Recommended)
+### Pull from GitHub Container Registry (Recommended)
 
 ```bash
-# Build and run the production app
-docker-compose up --build
+# Pull the latest image (supports AMD64 and ARM64)
+docker pull ghcr.io/yourusername/tobi-trivia:latest
+
+# Run the container
+docker run -p 3000:80 ghcr.io/yourusername/tobi-trivia:latest
+```
+
+The app will be available at `http://localhost:3000`
+
+### Using Docker Compose with Pre-built Image
+
+```bash
+# Create docker-compose.yml with the pre-built image
+docker-compose up
 
 # Run in background
-docker-compose up -d --build
+docker-compose up -d
 
 # Stop the app
 docker-compose down
 ```
 
-The app will be available at `http://localhost:3000`
-
-### Using Docker directly
+### Building Locally (Optional)
 
 ```bash
-# Build the image
+# Build for your current architecture
 docker build -t tobi-trivia .
 
-# Run the container
-docker run -p 3000:80 tobi-trivia
+# Build for multiple architectures (requires buildx)
+docker buildx build --platform linux/amd64,linux/arm64 -t tobi-trivia .
 ```
+
+## Multi-Architecture Support
+
+The Docker images are built for multiple CPU architectures:
+- **linux/amd64** - Intel/AMD 64-bit processors
+- **linux/arm64** - ARM 64-bit processors (Apple Silicon, Raspberry Pi 4+, AWS Graviton)
+
+Docker will automatically pull the correct image for your platform.
 
 ## Development Mode
 
@@ -38,17 +56,9 @@ docker-compose --profile dev up trivia-app-dev
 
 Development server will be available at `http://localhost:5173`
 
-## Publishing to GitHub Container Registry
+## Publishing Multi-Architecture Images
 
-1. Build and tag the image:
-```bash
-docker build -t ghcr.io/yourusername/tobi-trivia:latest .
-```
-
-2. Push to GitHub Container Registry:
-```bash
-docker push ghcr.io/yourusername/tobi-trivia:latest
-```
+The GitHub Actions workflow automatically builds and publishes multi-architecture images when you push to the main branch or create a release tag.
 
 ## Environment Variables
 
@@ -56,9 +66,11 @@ The app runs in production mode by default. No additional environment variables 
 
 ## Features
 
-- Multi-stage Docker build for optimized image size
+- Multi-architecture Docker images (AMD64 + ARM64)
+- Multi-stage build for optimized image size
 - Nginx for serving static files
 - Client-side routing support
 - Static asset caching
 - Security headers
 - Development mode support
+- Automated CI/CD with GitHub Actions

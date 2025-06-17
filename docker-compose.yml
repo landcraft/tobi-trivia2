@@ -2,15 +2,28 @@ version: '3.8'
 
 services:
   trivia-app:
-    build: .
+    image: ghcr.io/yourusername/tobi-trivia:latest
     ports:
       - "3000:80"
     environment:
       - NODE_ENV=production
     restart: unless-stopped
     container_name: tobi-trivia-app
+    platform: linux/amd64  # Will auto-detect and use appropriate architecture
 
-  # Optional: Add a development service
+  # Alternative: Build locally if needed
+  trivia-app-local:
+    build: .
+    ports:
+      - "3001:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    container_name: tobi-trivia-app-local
+    profiles:
+      - local-build
+
+  # Development service
   trivia-app-dev:
     build:
       context: .
