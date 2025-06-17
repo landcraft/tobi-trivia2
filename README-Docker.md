@@ -11,10 +11,10 @@ This guide explains how to build and run the Tobi's Daily Trivia app using Docke
 docker pull ghcr.io/yourusername/tobi-trivia:latest
 
 # Run the container
-docker run -p 3000:3000 ghcr.io/yourusername/tobi-trivia:latest
+docker run -p 3333:3000 ghcr.io/yourusername/tobi-trivia:latest
 ```
 
-The app will be available at `http://localhost:3000`
+The app will be available at `http://localhost:3333`
 
 ### Using Docker Compose with Pre-built Image
 
@@ -49,7 +49,7 @@ docker pull --platform linux/arm64 ghcr.io/yourusername/tobi-trivia:latest
 
 # Or build locally for your platform
 docker build -t tobi-trivia .
-docker run -p 3000:3000 tobi-trivia
+docker run -p 3333:3000 tobi-trivia
 ```
 
 ## Multi-Architecture Support
