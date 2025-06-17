@@ -4,7 +4,7 @@ services:
   trivia-app:
     image: ghcr.io/yourusername/tobi-trivia:latest
     ports:
-      - "3333:3000"
+      - "3000:80"
     environment:
       - NODE_ENV=production
     restart: unless-stopped
