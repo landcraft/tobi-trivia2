@@ -16,17 +16,20 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Production stage - use multi-arch base image
-FROM nginx:alpine
+# Production stage - serve directly with Node.js
+FROM node:18-alpine
+
+# Install serve globally
+RUN npm install -g serve
 
 # Copy built assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /app
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+# Set working directory
+WORKDIR /app
 
-# Expose port 80
-EXPOSE 80
+# Expose port 3000
+EXPOSE 3000
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start serve
+CMD ["serve", "-s", ".", "-l", "3000"]

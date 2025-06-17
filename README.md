@@ -12,6 +12,7 @@ A fun, colorful, and engaging trivia application designed specifically for child
 - 📱 **Responsive Design**: Works on desktop, tablet, and mobile devices
 - 🔄 **Question Refresh**: Get new questions anytime with the refresh button
 - 🐳 **Multi-Architecture Docker**: Supports AMD64 and ARM64 (Apple Silicon, Raspberry Pi)
+- ☁️ **Cloudflare Tunnel Ready**: No nginx dependency, works seamlessly behind Cloudflare
 
 ## Tech Stack
 
@@ -21,7 +22,7 @@ A fun, colorful, and engaging trivia application designed specifically for child
 - Radix UI components
 - Lucide React icons
 - Docker with multi-architecture support
-- Nginx for production serving
+- Node.js serve for production serving
 
 ## Quick Start
 
@@ -29,7 +30,7 @@ A fun, colorful, and engaging trivia application designed specifically for child
 
 ```bash
 # Pull and run the latest multi-architecture image
-docker run -p 3000:80 ghcr.io/yourusername/tobi-trivia:latest
+docker run -p 3000:3000 ghcr.io/yourusername/tobi-trivia:latest
 ```
 
 The app will be available at `http://localhost:3000`
@@ -77,6 +78,14 @@ Docker automatically selects the correct image for your platform.
 
 See [README-Docker.md](README-Docker.md) for detailed Docker setup instructions.
 
+## Cloudflare Tunnel Integration
+
+This application is optimized to run behind Cloudflare tunnels:
+- No nginx dependency
+- Direct Node.js serving on port 3000
+- Works seamlessly with cloudflared
+- Supports all Cloudflare security and performance features
+
 ## Self-Hosting
 
 This application is designed to be self-hosted and works great on:
@@ -84,6 +93,7 @@ This application is designed to be self-hosted and works great on:
 - Raspberry Pi (ARM64 support included)
 - Apple Silicon Macs (M1/M2)
 - Traditional x86_64 servers
+- Behind Cloudflare tunnels
 - Static hosting services (Netlify, Vercel, etc.)
 
 ## Contributing

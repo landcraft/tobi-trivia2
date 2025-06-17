@@ -11,7 +11,7 @@ This guide explains how to build and run the Tobi's Daily Trivia app using Docke
 docker pull ghcr.io/yourusername/tobi-trivia:latest
 
 # Run the container
-docker run -p 3000:80 ghcr.io/yourusername/tobi-trivia:latest
+docker run -p 3000:3000 ghcr.io/yourusername/tobi-trivia:latest
 ```
 
 The app will be available at `http://localhost:3000`
@@ -49,7 +49,7 @@ docker pull --platform linux/arm64 ghcr.io/yourusername/tobi-trivia:latest
 
 # Or build locally for your platform
 docker build -t tobi-trivia .
-docker run -p 3000:80 tobi-trivia
+docker run -p 3000:3000 tobi-trivia
 ```
 
 ## Multi-Architecture Support
@@ -81,9 +81,8 @@ The app runs in production mode by default. No additional environment variables 
 
 - Multi-architecture Docker images (AMD64 + ARM64)
 - Multi-stage build for optimized image size
-- Nginx for serving static files
+- Node.js serve for static file serving
 - Client-side routing support
-- Static asset caching
-- Security headers
 - Development mode support
 - Automated CI/CD with GitHub Actions
+- Cloudflare tunnel ready (no nginx dependency)
