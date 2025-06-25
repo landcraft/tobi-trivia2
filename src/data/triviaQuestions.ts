@@ -6,146 +6,183 @@ export interface TriviaQuestion {
   difficulty: string;
 }
 
-// All questions sourced from freely available educational content and general knowledge
+// Questions focused on topics for 8/9 year old boys: Math, Science, Space, Literature (NO Pokemon/Games)
 export const triviaQuestions: TriviaQuestion[] = [
+  // Math - Addition
   {
-    question: "What is 7 × 8?",
-    options: ["54", "56", "64", "48"],
-    correctAnswer: 1,
-    category: "Math",
-    difficulty: "Medium"
-  },
-  {
-    question: "How many minutes are in 2 hours?",
-    options: ["100", "110", "120", "130"],
+    question: "What is 25 + 17?",
+    options: ["40", "41", "42", "43"],
     correctAnswer: 2,
     category: "Math",
-    difficulty: "Medium"
+    difficulty: "Easy"
   },
   {
-    question: "What is the square root of 64?",
-    options: ["6", "7", "8", "9"],
+    question: "What is 34 + 28?",
+    options: ["60", "61", "62", "63"],
     correctAnswer: 2,
     category: "Math",
-    difficulty: "Medium"
+    difficulty: "Easy"
   },
+  // Math - Subtraction
   {
-    question: "Which planet is closest to the Sun?",
-    options: ["Venus", "Earth", "Mercury", "Mars"],
+    question: "What is 85 - 29?",
+    options: ["54", "55", "56", "57"],
     correctAnswer: 2,
-    category: "Space",
-    difficulty: "Medium"
-  },
-  {
-    question: "How many planets are in our solar system?",
-    options: ["7", "8", "9", "10"],
-    correctAnswer: 1,
-    category: "Space",
-    difficulty: "Medium"
-  },
-  {
-    question: "What is 144 ÷ 12?",
-    options: ["11", "12", "13", "14"],
-    correctAnswer: 1,
     category: "Math",
-    difficulty: "Medium"
+    difficulty: "Easy"
   },
   {
-    question: "Which gas makes up about 78% of Earth's atmosphere?",
-    options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-    correctAnswer: 1,
-    category: "Science",
-    difficulty: "Medium"
-  },
-  {
-    question: "How many sides does a pentagon have?",
-    options: ["4", "5", "6", "7"],
-    correctAnswer: 1,
+    question: "What is 72 - 35?",
+    options: ["35", "36", "37", "38"],
+    correctAnswer: 2,
     category: "Math",
-    difficulty: "Medium"
+    difficulty: "Easy"
   },
+  // Math - Multiplication
   {
-    question: "What is the largest planet in our solar system?",
-    options: ["Saturn", "Jupiter", "Neptune", "Uranus"],
-    correctAnswer: 1,
-    category: "Space",
-    difficulty: "Medium"
-  },
-  {
-    question: "What is 15 + 27?",
+    question: "What is 6 × 7?",
     options: ["40", "41", "42", "43"],
     correctAnswer: 2,
     category: "Math",
     difficulty: "Medium"
   },
   {
-    question: "How many bones are in an adult human body?",
-    options: ["106", "156", "206", "256"],
+    question: "What is 8 × 9?",
+    options: ["70", "71", "72", "73"],
     correctAnswer: 2,
-    category: "Science",
-    difficulty: "Medium"
-  },
-  {
-    question: "What is 9²?",
-    options: ["72", "81", "90", "99"],
-    correctAnswer: 1,
     category: "Math",
     difficulty: "Medium"
   },
   {
-    question: "How long does it take Earth to orbit the Sun?",
-    options: ["364 days", "365 days", "366 days", "367 days"],
-    correctAnswer: 1,
-    category: "Space",
+    question: "What is 12 × 5?",
+    options: ["58", "59", "60", "61"],
+    correctAnswer: 2,
+    category: "Math",
+    difficulty: "Medium"
+  },
+  // Math - Division
+  {
+    question: "What is 48 ÷ 6?",
+    options: ["6", "7", "8", "9"],
+    correctAnswer: 2,
+    category: "Math",
     difficulty: "Medium"
   },
   {
-    question: "What is the hardest natural substance on Earth?",
+    question: "What is 81 ÷ 9?",
+    options: ["8", "9", "10", "11"],
+    correctAnswer: 1,
+    category: "Math",
+    difficulty: "Medium"
+  },
+  // Math - Time
+  {
+    question: "How many minutes are in 3 hours?",
+    options: ["160", "170", "180", "190"],
+    correctAnswer: 2,
+    category: "Math",
+    difficulty: "Easy"
+  },
+  {
+    question: "How many seconds are in 5 minutes?",
+    options: ["250", "280", "300", "320"],
+    correctAnswer: 2,
+    category: "Math",
+    difficulty: "Easy"
+  },
+  // Science
+  {
+    question: "What do plants need to make their own food?",
+    options: ["Water only", "Sunlight only", "Sunlight and water", "Soil only"],
+    correctAnswer: 2,
+    category: "Science",
+    difficulty: "Easy"
+  },
+  {
+    question: "What is the hardest natural substance?",
     options: ["Gold", "Iron", "Diamond", "Silver"],
     correctAnswer: 2,
     category: "Science",
     difficulty: "Medium"
   },
   {
-    question: "If you have 3 dozens of eggs, how many eggs do you have?",
-    options: ["24", "30", "36", "42"],
-    correctAnswer: 2,
-    category: "Math",
-    difficulty: "Medium"
-  },
-  {
-    question: "How many chambers does a human heart have?",
-    options: ["2", "3", "4", "5"],
-    correctAnswer: 2,
+    question: "How many bones are in an adult human body?",
+    options: ["196", "206", "216", "226"],
+    correctAnswer: 1,
     category: "Science",
     difficulty: "Medium"
   },
   {
-    question: "What is 100 - 37?",
-    options: ["63", "67", "73", "77"],
-    correctAnswer: 0,
-    category: "Math",
-    difficulty: "Medium"
+    question: "What gas do we breathe in to stay alive?",
+    options: ["Carbon dioxide", "Nitrogen", "Oxygen", "Hydrogen"],
+    correctAnswer: 2,
+    category: "Science",
+    difficulty: "Easy"
+  },
+  // Space/Solar System
+  {
+    question: "Which planet is known as the Red Planet?",
+    options: ["Venus", "Mars", "Jupiter", "Saturn"],
+    correctAnswer: 1,
+    category: "Space",
+    difficulty: "Easy"
+  },
+  {
+    question: "How many moons does Earth have?",
+    options: ["0", "1", "2", "3"],
+    correctAnswer: 1,
+    category: "Space",
+    difficulty: "Easy"
   },
   {
     question: "Which planet has rings around it?",
-    options: ["Mars", "Jupiter", "Saturn", "Venus"],
+    options: ["Mars", "Venus", "Saturn", "Mercury"],
     correctAnswer: 2,
+    category: "Space",
+    difficulty: "Easy"
+  },
+  {
+    question: "What is the closest star to Earth?",
+    options: ["The Moon", "The Sun", "Mars", "Venus"],
+    correctAnswer: 1,
+    category: "Space",
+    difficulty: "Easy"
+  },
+  {
+    question: "Which planet is the largest in our solar system?",
+    options: ["Saturn", "Jupiter", "Neptune", "Earth"],
+    correctAnswer: 1,
     category: "Space",
     difficulty: "Medium"
   },
+  // Literature - Dog Man
   {
-    question: "What temperature does water freeze at in Celsius?",
-    options: ["0°C", "10°C", "32°C", "100°C"],
-    correctAnswer: 0,
-    category: "Science",
+    question: "Who created the Dog Man comic series?",
+    options: ["Jeff Kinney", "Dav Pilkey", "Rick Riordan", "Roald Dahl"],
+    correctAnswer: 1,
+    category: "Literature",
     difficulty: "Medium"
   },
   {
-    question: "How many angles does a triangle have?",
-    options: ["2", "3", "4", "5"],
+    question: "What is Dog Man's real identity?",
+    options: ["A police officer", "Half dog, half police officer", "A superhero", "A regular dog"],
     correctAnswer: 1,
-    category: "Math",
+    category: "Literature",
+    difficulty: "Easy"
+  },
+  // Literature - Diary of a Wimpy Kid
+  {
+    question: "Who is the main character in Diary of a Wimpy Kid?",
+    options: ["Rowley", "Greg Heffley", "Manny", "Rodrick"],
+    correctAnswer: 1,
+    category: "Literature",
+    difficulty: "Easy"
+  },
+  {
+    question: "What is the name of Greg's best friend?",
+    options: ["Rowley", "Fregley", "Chirag", "Rodrick"],
+    correctAnswer: 0,
+    category: "Literature",
     difficulty: "Easy"
   }
 ];
